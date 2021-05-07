@@ -1,5 +1,7 @@
 import './style.css';
-import { createElement } from './utils/elements';
+import { createElement, removeAllChildren } from './utils/elements';
+
+const testText = createElement('p', { innerText: 'THE BUTTON WORKS!' });
 
 const headerElement = createElement('header', {
   className: 'hero',
@@ -13,6 +15,10 @@ const headerElement = createElement('header', {
     createElement('button', {
       className: 'hero-button',
       type: 'button',
+      onclick: () => {
+        removeAllChildren(resultsElement);
+        resultsElement.append(testText);
+      },
       innerText: 'get yourself some art',
     }),
   ],
