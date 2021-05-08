@@ -4,5 +4,47 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100vh;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-text-color: #006d77;
+  --secondary-text-color: #83c5be;
+  --primary-background-color: #ffddd2;
+  --secondary-background-color: #e29578;
+  --accent-color: #edf6f9;
+}
+
+body {
+  margin: 0;
+}
+
+.hero {
+  background: var(--secondary-background-color);
+  color: var(--primary-text-color);
+  padding-top: 2em;
+}
+
+.hero-button {
+  margin-bottom: 2em;
+}
+
+.resultsSection {
+  min-height: 20em;
+  background: var(--primary-background-color);
+}
+
+.footer {
+  background: var(--secondary-background-color);
+  color: var(--primary-text-color);
+}
+
+.footer-text {
+  margin: 0;
 }
