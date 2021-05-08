@@ -1,7 +1,9 @@
 import './style.css';
 import { createElement, removeAllChildren } from './utils/elements';
+import { getArt } from './utils/api';
+import { createArtPiece } from './components/artPiece';
 
-const testText = createElement('p', { innerText: 'THE BUTTON WORKS!' });
+// const testText = createElement('p', { innerText: 'THE BUTTON WORKS!' });
 
 const headerElement = createElement('header', {
   className: 'hero',
@@ -15,14 +17,23 @@ const headerElement = createElement('header', {
     createElement('button', {
       className: 'hero-button',
       type: 'button',
+      innerText: 'get yourself some art',
       onclick: () => {
         removeAllChildren(resultsElement);
-        resultsElement.append(testText);
+        getArt().then((artPiece) => {
+          resultsElement.append(createArtPiece(artPiece));
+        });
       },
-      innerText: 'get yourself some art',
     }),
   ],
 });
+
+// const artDisplay = getArt('702580d8-451e-0b0c-bcc1-bac62e5f6631').then(
+//   (artPiece) => {
+//     console.log(artPiece);
+//     // resultsElement.append(createArtPiece)
+//   }
+// );
 
 const resultsElement = createElement('section', {
   className: 'resultsSection',
