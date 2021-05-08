@@ -2,6 +2,7 @@ import './style.css';
 import { createElement, removeAllChildren } from './utils/elements';
 import { getArt } from './utils/api';
 import { createArtPiece } from './components/artPiece';
+import { debounce } from './utils/timer';
 
 // const testText = createElement('p', { innerText: 'THE BUTTON WORKS!' });
 
@@ -18,12 +19,12 @@ const headerElement = createElement('header', {
       className: 'hero-button',
       type: 'button',
       innerText: 'get yourself some art',
-      onclick: () => {
+      onclick: debounce(() => {
         removeAllChildren(resultsElement);
         getArt().then((artPiece) => {
           resultsElement.append(createArtPiece(artPiece));
         });
-      },
+      }, 2000),
     }),
   ],
 });
