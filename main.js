@@ -13,7 +13,7 @@ const headerElement = createElement('header', {
     createElement('p', {
       className: 'hero-text',
       innerText:
-        'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
+        'Are you stressed? Do you miss museums? Look at some art! If you need a breather, let your mind wander while looking at something beautiful. Just click the button. You will be okay.',
     }),
     createElement('button', {
       className: 'hero-button',
