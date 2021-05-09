@@ -47,6 +47,10 @@ const footerElement = createElement('footer', {
       className: 'footer-text',
       innerText: "It's fine. This is fine.",
     }),
+    createElement('p', {
+      className: 'footer-text',
+      innerText: 'Images and Data via Art Institute of Chicago API',
+    }),
   ],
 });
 
