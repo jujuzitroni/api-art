@@ -4,8 +4,6 @@ import { getArt } from './utils/api';
 import { createArtPiece } from './components/artPiece';
 import { debounce } from './utils/timer';
 
-// const testText = createElement('p', { innerText: 'THE BUTTON WORKS!' });
-
 const headerElement = createElement('header', {
   className: 'hero',
   children: [
@@ -24,17 +22,10 @@ const headerElement = createElement('header', {
         getArt().then((artPiece) => {
           resultsElement.append(createArtPiece(artPiece));
         });
-      }, 2000),
+      }, 500),
     }),
   ],
 });
-
-// const artDisplay = getArt('702580d8-451e-0b0c-bcc1-bac62e5f6631').then(
-//   (artPiece) => {
-//     console.log(artPiece);
-//     // resultsElement.append(createArtPiece)
-//   }
-// );
 
 const resultsElement = createElement('section', {
   className: 'resultsSection',
@@ -46,6 +37,10 @@ const footerElement = createElement('footer', {
     createElement('p', {
       className: 'footer-text',
       innerText: "It's fine. This is fine.",
+    }),
+    createElement('p', {
+      className: 'footer-text',
+      innerText: 'Images and data via Art Institute of Chicago API',
     }),
   ],
 });
